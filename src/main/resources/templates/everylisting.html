@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+
+<meta charset="UTF-8" />
+<title>All Listings</title>
+</head>
+
+<body>
+
+<h2>All Listings</h2>
+	
+<table>
+	<tr>	
+	
+	<th>Address</th>
+	<th>City</th>
+	<th>State</th>
+	<th>Price</th>
+	
+	</tr>
+	<tr th:each="listings : ${listObject}" />
+	  <td th:text="'id: ' + ${listings.id}" /> 
+      <td th:text="'Address: ' + ${listings.address}" />
+      <td th:text="'City: ' + ${listings.city}" />
+      <td th:text="'State: ' + ${listings.state}" />
+      <td th:text="'Price: ' + ${listings.price}" />
+	
+	</table>
+
+</body>
+</html>
